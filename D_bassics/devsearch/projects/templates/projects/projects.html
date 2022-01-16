@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>django level 2</title>
+    <link rel="stylesheet" href="{%static 'css/mystyle.css' %}" />
+  </head>
+  <body>
+    <h1>this is H1 wow</h1>
+    <!-- <img
+      src="{% static 'images/django-react-course.jpg' %}"
+      alt="faild"
+      width="40%"
+    /> -->
+    <div class="djangotwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>site name</th>
+          <th>Data Accessed</th>
+        </thead>
+        {% for acc in access_records %}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.date}}</td>
+        </tr>
+        {%endfor%}
+      </table>
+      {%else%}
+      <p>NO ACC FOUND</p>
+      {%endif%}
+    </div>
+  </body>
+</html>
